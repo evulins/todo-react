@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-class Buttons extends Component {
+class NavButtons extends Component {
 
   static propTypes = {
     count: PropTypes.number.isRequired
@@ -21,4 +21,4 @@ class Buttons extends Component {
   }
 }
 
-export default Buttons
+export default NavButtons

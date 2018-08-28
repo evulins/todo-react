@@ -3,7 +3,6 @@ import './App.css';
 import TaskContainer from './components/TaskContainer'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTrash, faCheck } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 library.add(
   faTrash,
