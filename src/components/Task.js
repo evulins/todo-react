@@ -23,7 +23,6 @@ class Task extends Component {
 
   render() {
     const task = this.props.task
-    // const taskClassName = this.props.task.checked ? 'checked' : '';
 
     return (
       <li>

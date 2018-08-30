@@ -3,10 +3,18 @@ import NavButtons from './NavButtons'
 import TaskForm from './TaskForm'
 import TasksList from './TasksList'
 
+
+const FILTERS = {
+  'active': task => !task.completed,
+  'completed': task => task.completed,
+  'all': task => task
+}
+
 class TaskContainer extends Component {
 
   state = {
-    tasks: []
+    tasks: [],
+    filterKey: 'all'
   }
   
   taskId = () => this.state.tasks.length + 1
@@ -40,8 +48,20 @@ class TaskContainer extends Component {
     }
   }
 
+  clearCompleted = () => {
+    this.setState({
+      tasks: this.state.tasks.filter(task => !task.completed)
+    })
+  }
+
+  changeCategory = (key) => {
+    this.setState({
+      filterKey: key
+    })
+  }
+
   render() {
-    
+
     return (
       <div className="task-container">
         <TaskForm
@@ -49,14 +69,16 @@ class TaskContainer extends Component {
           onCreateTask={this.createTask}
         />
         <TasksList
-          tasks={this.state.tasks}
           onCreateTask={this.createTask}
           deleteTask={this.removeTask}
           changeTaskStatus={this.changeTaskStatus}
+          filteredTasks={this.state.tasks.filter(FILTERS[this.state.filterKey])}
         />
 
         <NavButtons 
-          count={this.state.tasks.length}
+          count={this.state.tasks.filter(task => !task.completed).length}
+          clearCompleted={this.clearCompleted}
+          changeCategory={this.changeCategory}
         />
           
       </div>

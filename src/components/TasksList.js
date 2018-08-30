@@ -5,7 +5,7 @@ import Task from './Task'
 class TasksList extends Component {
 
   static propTypes = {
-    tasks: PropTypes.array.isRequired,
+    filteredTasks: PropTypes.array.isRequired,
     deleteTask: PropTypes.func.isRequired,
     changeTaskStatus: PropTypes.func.isRequired
   }
@@ -15,11 +15,10 @@ class TasksList extends Component {
     return (
       <div className="listForm">
         <ul className="tasks">
-          {this.props.tasks.map((task, index) => (
+          {this.props.filteredTasks.map((task, index) => (
             <Task 
               task={task}
               key={index}
-              tasksList={this.props.tasks}
               deleteTask={this.props.deleteTask}
               changeTaskStatus={this.props.changeTaskStatus}
             />

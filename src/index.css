@@ -46,8 +46,8 @@ body {
 
 
 
-h1{
-  margin-bottom:50px !important;
+h1 {
+  margin-bottom: 50px !important;
 }
 h1 {
   font: 300 3.2em/1.2 "Lato", sans-serif;
@@ -56,12 +56,12 @@ h1 {
 }
 
 header {
-  padding-top: 30px;
-  margin-bottom: 30px;
-  text-align:center;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.todo-app {
+.todo-app .task-container {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -88,7 +88,6 @@ header {
 
 .buttons {
     margin: 0 auto;
-    width: 100%;
     text-align: center;
     list-style-type: none;
 }
@@ -96,6 +95,7 @@ header {
 .buttons li {
     float: left;
     margin-left: 3px;
+    background-color: rgba(0,0,0,.25);
 }
 
 input[type='text'] {
@@ -148,24 +148,15 @@ input[type='text'] {
 }
 
 .count {
-  border:0;
-  width: 100px;
-  background-color: transparent;
   padding: 10px 20px;
-  color: white;
-  cursor: pointer;
-  font-size: 16px
-}
-.count {
-  background-color: rgba(0,0,0,.25);
-  font:300 18px "Lato", "Arial", sans-serif;
+  font: 300 16px "Lato", "Arial", sans-serif;
+  white-space: nowrap;
 }
 
 
 .button_delete {
   opacity: 0.6;
   font-size: 24px;
-  /*color: transparent;*/
   -webkit-transition: opacity .3s .1s ease;
   transition: opacity .3s .1s ease;
   cursor: pointer;
@@ -180,7 +171,7 @@ input[type='text'] {
   color: #d4d8d5;
 }
 
-.buttons input[type="button"]{
+.buttons input[type="button"] {
   border:0;
   background-color: transparent;
   padding: 10px 20px;
@@ -188,7 +179,7 @@ input[type='text'] {
   cursor: pointer;
   font-size: 16px
 }
-.clearCompleted{
+.clearCompleted {
   background-color: rgba(0,0,0,.25);
   font:300 18px "Lato", "Arial", sans-serif;
 }
@@ -230,22 +221,20 @@ input[type='text'] {
   -webkit-transition: border .3s ease;
   transition: border .3s ease;
 }
-.label__check i.icon {
+/*.label__check .icon {
   opacity: 0.2;
   font-size: 36px;
   color: transparent;
   -webkit-transition: opacity .3s .1s ease;
   transition: opacity .3s .1s ease;
   -webkit-text-stroke: 3px rgba(0, 0, 0, 0.5);
-}
-.label__check:hover {
-  border: 5px solid rgba(0, 0, 0, 0.2);
-}
+}*/
+
 .label__checkbox:checked + .label__text .label__check {
   -webkit-animation: check 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22) 1 forwards;
           animation: check 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22) 1 forwards;
 }
-.label__checkbox:checked + .label__text .label__check .icon {
+/*.label__checkbox:checked + .label__text .label__check .icon {
   opacity: 1;
   -webkit-transform: scale(0);
           transform: scale(0);
@@ -253,7 +242,7 @@ input[type='text'] {
   -webkit-text-stroke: 0;
   -webkit-animation: icon 0.3s cubic-bezier(1, 0.008, 0.565, 1.65) 0.1s 1 forwards;
           animation: icon 0.3s cubic-bezier(1, 0.008, 0.565, 1.65) 0.1s 1 forwards;
-}
+}*/
 
 .center {
  float: left;
