@@ -1,14 +1,7 @@
+
+/* CSS Document */
 @import url(http://fonts.googleapis.com/css?family=Lato:300,100,400);
 @import "http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css";
-
-li [class^=icon-],
-li [class*=" icon-"] {
-  width: 40px !important;
-  font-size: 22px;
-  display:block !important;
-  position:absolute !important;
-  float:none !important;
-}
 
 
 ::-webkit-input-placeholder {
@@ -44,11 +37,12 @@ body {
   color: white
 }
 
-
+/* ====================== Header ====================== */
 
 h1 {
   margin-bottom: 50px !important;
 }
+
 h1 {
   font: 300 3.2em/1.2 "Lato", sans-serif;
   color: white;
@@ -61,6 +55,8 @@ header {
   text-align: center;
 }
 
+/* ====================== Task Container ====================== */
+
 .todo-app .task-container {
   display: flex;
   width: 100%;
@@ -68,17 +64,17 @@ header {
   text-align: center;
 }
 
-.form {
-	width: 100%;
-    position: relative;
-    text-align: center;
-    left: 20px;
-}
+/* ====================== New Task Form ====================== */
 
 .newTaskForm {
    width: 100%;
    text-align: center;
+}
 
+.form {
+  width: 100%;
+  text-align: center;
+  left: 20px;
 }
 
 .taskField {
@@ -86,73 +82,55 @@ header {
   text-align: center;
 }
 
-.buttons {
-    margin: 0 auto;
-    text-align: center;
-    list-style-type: none;
-}
-
-.buttons li {
-    float: left;
-    margin-left: 3px;
-    background-color: rgba(0,0,0,.25);
-}
-
 input[type='text'] {
-  width: 482px;
-  height: 50px;
+  width: 70%;
+  min-height: 50px;
   border: none;
   background-color: transparent;
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight:300;
   color: white;
-  padding:5px 10px;
+  padding:0.5rem 1rem;
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease;
   background-color: rgba(0,0,0,.15);
 }
 
+/* ====================== Task ====================== */
+
+.listForm {
+  width: 100%;
+  text-align: center;
+}
 
 .tasks {
   list-style-type: none;
-  max-width: 500px;
+  width: 70%;
   margin: 30px auto;
   text-align: center;
+  padding: 0;
 
 }
 
 .tasks li {
-  z-index:1;
   font-weight: 400;
   box-shadow: 0 7px 0 -4px rgba(0, 0, 0, 0.2);
   color: #444;
   text-align: left;
   min-height: 50px;
   line-height: 46px;
-  font-size: 20px;
+  font-size: 1.2rem;
   background-color: white;
   margin-bottom: 10px;
   padding: 10px;
   padding-right: 60px;
-  position: relative;
-  opacity: 100;
   word-wrap: break-word;
-  -webkit-transition: all .1s ease;
-  -o-transition: all .1s ease;
-  transition: all .1s ease
 }
 
 .tasks li:focus {
   outline: none;
 }
-
-.count {
-  padding: 10px 20px;
-  font: 300 16px "Lato", "Arial", sans-serif;
-  white-space: nowrap;
-}
-
 
 .button_delete {
   opacity: 0.6;
@@ -162,13 +140,32 @@ input[type='text'] {
   cursor: pointer;
 }
 
-.button_delete:hover {
-  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.5);
-}
-
-.tasks li.completedTask {
+.tasks li::checked {
   text-decoration: line-through;
   color: #d4d8d5;
+}
+
+.center {
+ float: left;
+}
+
+.remove {
+  float: right;
+}
+
+/* ====================== Nav Buttons ====================== */
+
+.buttons {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  list-style-type: none;
+}
+
+.buttons li {
+  float: left;
+  background-color: rgba(0,0,0,.25);
+  margin-left: 3px;
 }
 
 .buttons input[type="button"] {
@@ -179,18 +176,28 @@ input[type='text'] {
   cursor: pointer;
   font-size: 16px
 }
+
+.count {
+  padding: 10px 20px;
+  font: 300 16px "Lato", "Arial", sans-serif;
+  white-space: nowrap;
+}
+
 .clearCompleted {
   background-color: rgba(0,0,0,.25);
   font:300 18px "Lato", "Arial", sans-serif;
 }
+
 .completed {
   background-color: rgba(0,0,0,.25);
   font:300 18px "Lato", "Arial", sans-serif;
 }
+
 .active {
   background-color: rgba(0,0,0,.25);
   font:300 18px "Lato", "Arial", sans-serif;
 }
+
 .all {
   background-color: rgba(0,0,0,.25);
   font:300 18px "Lato", "Arial", sans-serif;
@@ -199,8 +206,8 @@ input[type='text'] {
 .label__checkbox {
   display: none;
 }
+
 .label__check {
-  display: inline-block;
   border-radius: 50%;
   border: 5px solid rgba(0, 0, 0, 0.1);
   background: white;
@@ -220,128 +227,4 @@ input[type='text'] {
           justify-content: center;
   -webkit-transition: border .3s ease;
   transition: border .3s ease;
-}
-/*.label__check .icon {
-  opacity: 0.2;
-  font-size: 36px;
-  color: transparent;
-  -webkit-transition: opacity .3s .1s ease;
-  transition: opacity .3s .1s ease;
-  -webkit-text-stroke: 3px rgba(0, 0, 0, 0.5);
-}*/
-
-.label__checkbox:checked + .label__text .label__check {
-  -webkit-animation: check 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22) 1 forwards;
-          animation: check 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22) 1 forwards;
-}
-/*.label__checkbox:checked + .label__text .label__check .icon {
-  opacity: 1;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  color: white;
-  -webkit-text-stroke: 0;
-  -webkit-animation: icon 0.3s cubic-bezier(1, 0.008, 0.565, 1.65) 0.1s 1 forwards;
-          animation: icon 0.3s cubic-bezier(1, 0.008, 0.565, 1.65) 0.1s 1 forwards;
-}*/
-
-.center {
- float: left;
-}
-
-.remove {
-  float: right;
-}
-@-webkit-keyframes icon {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0.3);
-            transform: scale(0.3);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-@keyframes icon {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0.3);
-            transform: scale(0.3);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-@-webkit-keyframes check {
-  0% {
-    width: 1.5em;
-    height: 1.5em;
-    border-width: 5px;
-  }
-  10% {
-    width: 1.5em;
-    height: 1.5em;
-    opacity: 0.1;
-    background: rgba(0, 0, 0, 0.2);
-    border-width: 15px;
-  }
-  12% {
-    width: 1.5em;
-    height: 1.5em;
-    opacity: 0.4;
-    background: rgba(0, 0, 0, 0.1);
-    border-width: 0;
-  }
-  50% {
-    width: 2em;
-    height: 2em;
-    background: #00d478;
-    border: 0;
-    opacity: 0.6;
-  }
-  100% {
-    width: 2em;
-    height: 2em;
-    background: #00d478;
-    border: 0;
-    opacity: 1;
-  }
-}
-@keyframes check {
-  0% {
-    width: 1.5em;
-    height: 1.5em;
-    border-width: 5px;
-  }
-  10% {
-    width: 1.5em;
-    height: 1.5em;
-    opacity: 0.1;
-    background: rgba(0, 0, 0, 0.2);
-    border-width: 15px;
-  }
-  12% {
-    width: 1.5em;
-    height: 1.5em;
-    opacity: 0.4;
-    background: rgba(0, 0, 0, 0.1);
-    border-width: 0;
-  }
-  50% {
-    width: 2em;
-    height: 2em;
-    background: #00d478;
-    border: 0;
-    opacity: 0.6;
-  }
-  100% {
-    width: 2em;
-    height: 2em;
-    background: #00d478;
-    border: 0;
-    opacity: 1;
-  }
 }
