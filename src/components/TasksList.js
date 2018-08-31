@@ -2,31 +2,30 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Task from './Task'
 
-class TasksList extends Component {
 
-  static propTypes = {
-    filteredTasks: PropTypes.array.isRequired,
-    deleteTask: PropTypes.func.isRequired,
-    changeTaskStatus: PropTypes.func.isRequired
-  }
-
-  render() {
-
-    return (
+const TasksList = (props) => {
+  return (
       <div className="listForm">
         <ul className="tasks">
-          {this.props.filteredTasks.map((task, index) => (
+          {props.filteredTasks.map((task, index) => (
             <Task 
               task={task}
               key={index}
-              deleteTask={this.props.deleteTask}
-              changeTaskStatus={this.props.changeTaskStatus}
+              deleteTask={props.deleteTask}
+              changeTaskStatus={props.changeTaskStatus}
             />
           ))}
         </ul>
       </div>
     )
-  }
 }
+
+
+
+  TasksList.propTypes = {
+    filteredTasks: PropTypes.array.isRequired,
+    deleteTask: PropTypes.func.isRequired,
+    changeTaskStatus: PropTypes.func.isRequired
+  }
 
 export default TasksList
