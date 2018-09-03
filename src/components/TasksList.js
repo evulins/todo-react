@@ -22,7 +22,7 @@ const TasksList = (props) => {
 
 
 
-  TasksList.propTypes = {
+  TasksLiropTypes = {
     filteredTasks: PropTypes.array.isRequired,
     deleteTask: PropTypes.func.isRequired,
     changeTaskStatus: PropTypes.func.isRequired
