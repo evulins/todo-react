@@ -1,6 +1,6 @@
 # ToDo App
 
-**ToDo App** is the simple task app. This ToDo app allows you to create your own list od tasks, delete and fitler them. Also it shows you number of uncompleted tasks.
+**ToDo App** is the simple task app. This ToDo app allows you to create your own list of tasks, delete and fitler them. Also it shows you number of uncompleted tasks.
 
 ## Specification
 For the project I used:
