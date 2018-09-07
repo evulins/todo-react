@@ -26,6 +26,11 @@ class ToDoStore extends EventEmitter {
     this.emit('change')
   }
 
+  clearCompleted = () => {
+    this.tasks = this.tasks.filter(task => !task.completed)
+    this.emit('change')
+  }
+
   handelActions = (action) => {
     switch(action.type) {
       case 'CREATE_TASK': {
@@ -34,6 +39,10 @@ class ToDoStore extends EventEmitter {
       }
       case 'DELETE_TASK': {
         this.deleteTask(action.id)
+        break
+      }
+      case 'CLEAR_COMPLETED': {
+        this.clearCompleted()
         break
       }
       default:

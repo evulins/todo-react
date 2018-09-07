@@ -42,7 +42,13 @@ class TaskContainer extends Component {
   }
 
   createTask = (task) => {
-    TodoActions.createTask(task)
+    const minLength = 3;
+    if (task.length < minLength) {
+      alert("Your task must have at least " + minLength + " characters")
+      return
+    } else {
+      TodoActions.createTask(task)
+    }
   }
 
   changeTaskStatus = (task) => {
@@ -55,6 +61,7 @@ class TaskContainer extends Component {
   }
 
   deleteTask = (id) => { 
+    // 
     // const newState = this.state.tasks
     // if (newState.indexOf(task) > -1) {
     //   newState.splice(newState.indexOf(task), 1)
@@ -64,9 +71,9 @@ class TaskContainer extends Component {
   }
 
   clearCompleted = () => {
-    this.setState({
-      tasks: this.state.tasks.filter(task => !task.completed)
-    })
+    // this.setState({
+    //   tasks: this.state.tasks.filter(task => !task.completed)
+    TodoActions.clearCompleted()
   }
 
   changeCategory = (key) => {

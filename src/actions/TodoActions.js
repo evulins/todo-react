@@ -7,10 +7,15 @@ export function createTask(task) {
   })
 }
 
-
 export function deleteTask(id) {
   dispatcher.dispatch({
     type: "DELETE_TASK",
     id
+  })
+}
+
+export function clearCompleted() {
+  dispatcher.dispatch({
+    type: "CLEAR_COMPLETED"
   })
 }
