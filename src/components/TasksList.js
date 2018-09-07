@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Task from './Task'
 
@@ -7,10 +7,10 @@ const TasksList = (props) => {
   return (
       <div className="listForm">
         <ul className="tasks">
-          {props.filteredTasks.map((task, index) => (
+          {props.filteredTasks.map((task) => (
             <Task 
               task={task}
-              key={index}
+              key={task.id}
               deleteTask={props.deleteTask}
               changeTaskStatus={props.changeTaskStatus}
             />
@@ -20,9 +20,7 @@ const TasksList = (props) => {
     )
 }
 
-
-
-  TasksLiropTypes = {
+  TasksList.propTypes = {
     filteredTasks: PropTypes.array.isRequired,
     deleteTask: PropTypes.func.isRequired,
     changeTaskStatus: PropTypes.func.isRequired

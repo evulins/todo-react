@@ -12,7 +12,7 @@ class Task extends Component {
 
   remove = () => {
     const { task, deleteTask } = this.props
-    deleteTask(task)
+    deleteTask(task.id)
   }
 
   changeStatus = () => {
